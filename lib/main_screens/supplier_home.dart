@@ -1,4 +1,3 @@
-import 'package:badges/badges.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import 'package:multi_store/main_screens/dashboard.dart';
 import 'package:multi_store/main_screens/home.dart';
 import 'package:multi_store/main_screens/stores.dart';
 import 'package:multi_store/main_screens/upload_product.dart';
+import 'package:badges/badges.dart';
 
 class SupplierHomeScreen extends StatefulWidget {
   const SupplierHomeScreen({Key? key}) : super(key: key);
@@ -66,8 +66,7 @@ class _SupplierHomeScreenState extends State<SupplierHomeScreen> {
                 BottomNavigationBarItem(
                   icon: Badge(
                       showBadge: snapshot.data!.docs.isEmpty ? false : true,
-                      padding: const EdgeInsets.all(2),
-                      badgeColor: Colors.yellow,
+                     
                       badgeContent: Text(
                         snapshot.data!.docs.length.toString(),
                         style: const TextStyle(

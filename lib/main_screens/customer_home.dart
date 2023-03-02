@@ -1,4 +1,3 @@
-import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_store/main_screens/cart.dart';
 import 'package:multi_store/main_screens/category.dart';
@@ -7,6 +6,7 @@ import 'package:multi_store/main_screens/profile.dart';
 import 'package:multi_store/main_screens/stores.dart';
 import 'package:multi_store/providers/cart_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:badges/badges.dart';
 
 class CustomerHomeScreen extends StatefulWidget {
   const CustomerHomeScreen({
@@ -54,8 +54,7 @@ class CustomerHomeScreenState extends State<CustomerHomeScreen> {
           BottomNavigationBarItem(
             icon: Badge(
                 showBadge: context.read<Cart>().getItems.isEmpty ? false : true,
-                padding: const EdgeInsets.all(2),
-                badgeColor: Colors.yellow,
+               
                 badgeContent: Text(
                   context.watch<Cart>().getItems.length.toString(),
                   style: const TextStyle(
